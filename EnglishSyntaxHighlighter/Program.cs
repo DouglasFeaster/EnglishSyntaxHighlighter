@@ -47,34 +47,35 @@ namespace EnglishSyntaxHighlighter
                     wordtype = wordtypes.FirstOrDefault();
                 }
 
-                if (wordtype.Contains("pron."))
-                {
-                    Console.ForegroundColor = ConsoleColor.DarkYellow;
-                    Console.Write(word + " ");
-                }
-                else if (wordtype.Contains("n."))
+                
+                if (wordtype == "n." || wordtype == "pl.")
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.Write(word + " ");
                 }
-                else if (wordtype.Contains("a."))
+                else if (wordtype == "a.")
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.Write(word + " ");
                 }
-                else if (wordtype.Contains("v.") || wordtype.Contains("v. & n."))
+                else if (wordtype == "v." || wordtype == "v. & n.")
                 {
                     Console.ForegroundColor = ConsoleColor.Blue;
                     Console.Write(word + " ");
                 }
-                else if (wordtype.Contains("adv."))
+                else if (wordtype == "adv.")
                 {
                     Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.Write(word + " ");
                 }
-                else if (wordtype.Contains("prep.") || wordtype.Contains("imp."))
+                else if (wordtype == "prep." || wordtype == "imp.")
                 {
                     Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.Write(word + " ");
+                }
+                else if (wordtype == "pron.")
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkYellow;
                     Console.Write(word + " ");
                 }
                 else
